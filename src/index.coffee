@@ -7,9 +7,12 @@ fs = require 'fs'
  *
  * @param {Object} options
  * @param {String} options.map Config filename, default 'distribution.json'
- * @param {Boolean} options.watch Watch changes in config file, default 'false' in production environment
- * @param {Function} options.log Function for logging, set to 'false' to desable logging
- * @param {Function} options.error Function for logging errors, set to 'false' to desable logging
+ * @param {Boolean} options.watch Watch changes in config file,
+ * default 'false' in production environment
+ * @param {Function} options.log Function for logging,
+ * set to 'false' to desable logging
+ * @param {Function} options.error Function for logging errors,
+ * set to 'false' to desable logging
  * @throws {Error|SyntaxError} Error reading file or parsing content
  *
 ###
@@ -35,11 +38,16 @@ module.exports = (options={})->
           options.error "error parsing file '#{options.map}'"
 
   # Express helper function
-  return (key)->
-    asset = assets[key]
-    unless asset?
-      options.error("asset '#{key}' not found") if options.error?
-    return asset || ''
+  return {
+    helper: (key)->
+      asset = assets[key]
+      unless asset?
+        options.error("asset '#{key}' not found") if options.error?
+        return key
+      return asset
+    map: ()->
+      return assets || {}
+  }
 
 
 ###*

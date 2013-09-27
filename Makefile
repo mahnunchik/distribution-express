@@ -10,12 +10,12 @@ OUT_DIR := lib
 DOC_DIR := docs
 
 SCRIPTS := $(patsubst $(SRC_DIR)/%.coffee, \
-                     $(OUT_DIR)/%.js, \
-                     $(wildcard $(SRC_DIR)/*.coffee $(SRC_DIR)/*/*.coffee))
+                      $(OUT_DIR)/%.js, \
+                      $(wildcard $(SRC_DIR)/*.coffee $(SRC_DIR)/*/*.coffee))
 
 DOCS := $(patsubst $(SRC_DIR)/%.coffee, \
-                     $(DOC_DIR)/%.md, \
-                     $(wildcard $(SRC_DIR)/*.coffee $(SRC_DIR)/*/*.coffee))
+                   $(DOC_DIR)/%.md, \
+                   $(wildcard $(SRC_DIR)/*.coffee $(SRC_DIR)/*/*.coffee))
 
 
 .SUFFIXES:

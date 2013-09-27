@@ -12,11 +12,11 @@ Express helper
 
 * **String** *options.map* Config filename, default 'distribution.json'
 
-* **Boolean** *options.watch* Watch changes in config file, default 'false' in production environment
+* **Boolean** *options.watch* Watch changes in config file,
 
-* **Function** *options.log* Function for logging, set to 'false' to desable logging
+* **Function** *options.log* Function for logging,
 
-* **Function** *options.error* Function for logging errors, set to 'false' to desable logging
+* **Function** *options.error* Function for logging errors,
 
 ## parseFile
 
